@@ -1,0 +1,15 @@
+[package]
+name = "llm-context-gen"
+version = "0.1.0"
+edition = "2024"
+authors = ["Anish Prashun <github.com/anishpras>"]
+description = "A CLI tool to generate text files from source code for LLM context"
+readme = "README.md"
+license = "MIT"
+repository = "https://github.com/anishpras/llm-context-gen"
+keywords = ["llm", "context", "generator", "cli"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+structopt = "0.3.26"
+ignore = "0.4.20"
