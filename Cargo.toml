@@ -1,7 +1,7 @@
 [package]
 name = "llm-context-gen"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 authors = ["Anish Prashun <github.com/anishpras>"]
 description = "A CLI tool to generate text files from source code for LLM context"
 readme = "README.md"
