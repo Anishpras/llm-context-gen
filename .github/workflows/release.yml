@@ -9,7 +9,10 @@ jobs:
   build:
     name: Build ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
+    permissions:
+      contents: write
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest, windows-latest, macOS-latest]
         include:
@@ -24,10 +27,12 @@ jobs:
             asset_name: llm-context-gen-macos
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: stable
+          profile: minimal
+          override: true
       - uses: actions-rs/cargo@v1
         with:
           command: build
@@ -39,3 +44,4 @@ jobs:
           file: target/release/${{ matrix.artifact_name }}
           asset_name: ${{ matrix.asset_name }}
           tag: ${{ github.ref }}
+          overwrite: true
